@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAJERO ELCTRONICO</title>
+        <!-- Link de sitio sweetalert mensaje mas elegante -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <style>
+            h1,h2,p{
+                font-size: 26px;
+                color: blueviolet;
+            }
+        </style>
+</head>
+<body>
+    <center>
+        <img src="img/logo nu.jpeg" alt="" width="150" height="150">
+        <h1>BANCO NUBANK</h1>
+        <h2>RETIRO DE DINERO DE CAJERO ELECTRONICO</h2>
+        <p>Bienvenido sr. Usuario a nuestro Banco NUBANK</p>
+        <br><br>
+       <script>
+        let sw=0;//Variable bandera 0=pagado
+        //Entrada
+        let cuenta=parseInt(prompt("Ingrese su numero de cuenta de ahorros"));
+        let saldo=parseInt(prompt("Ingrese saldo $$ a consignar en cuenta"));
+        let valor=parseInt(prompt("Ingrese valor dinero$$ a retirar de cuenta"));
+        //PROCESO-SALIDA
+        if(valor>saldo){
+            swal("Estimado usuario","!! FOMDOS INSUFICIENTES !!","error");
+        }else{
+            sw=1;
+            var saldof;
+            saldof=saldo-valor;
+            swal("Estimados usuario","RETIRE SU DINERO","success");
+        }
+        //
+        if(sw==0){
+            document.write("SU SALDO DISPONIBLE ES ...$"+saldo);
+        }else{
+            document.write("SU SALDO ACTUAL ES ...$"+saldof)
+        }
+       </script>
+          
+    </center>
+</body>
+</html>
