@@ -16,16 +16,23 @@
         <h2>MATERIA PAE JAVASCRIPT</h2>
         <h3>APROBADO MINIMO 3.0 - EXELENTE 5.0</h3>
         <script>
-            let nombre=prompt("Ingrese su nombre de eatudiante");
-            let curso=prompt("Ingrese su curso actial");
+            let nombre=prompt("Ingrese su nombre de estudiante");
+            let curso=prompt("Ingrese su curso actual");
             let nota01=parseFloat(prompt("Ingrese primera nota"));
             let nota02=parseFloat(prompt("Ingrese segunda nota"));
             let nota03=parseFloat(prompt("Ingrese tercera nota"));
             definitiva=(nota01+nota02+nota03)/3;
             // salida
-            document.write("<table><caption> RELACION DE PAGO</caption> <tr><th>DIAS TRABAJADOS</th><td>",dias,"</th></tr> <tr><th>VALOR DIA</th><td>",vdia,"</dt></tr><th>BONIFICACION</th><td>",bonificacio,"</td></tr><tr><th>VALOR A PAGAR</th><td>",total,"</td></tr></t<ble>");
-                //Cindicional
-                
+            document.write("<table><caption>RELACION DE NOTAS </caption><tr><th>NOMBRE</th><td>",nombre ,"</td></tr><tr><th>CURSO</th><td>",curso ,"</td></tr><tr><th>nota01</th><td>",nota01.toFixed(1),"</td></tr><tr><th>nota02</th><td>",nota02.toFixed(1),"</td></tr><tr><th>nota03</th><td>",nota03.toFixed(1),"</td></tr><tr><th>definitiva</th><td>",definitiva.toFixed(2),"</th></tr>");
+            //
+            if(definitiva<3.0){
+                swal("Apreciado estidiante","HAS REPROBADO MATERIA PAE","error");
+                document.write("<tr><th>estado</th><td>reprobado</td></tr></table>");
+            }
+            else{
+                swal("Apreciado estudiate","HAS APROBADO MATERIA PAE","error");
+                document.write("<tr><th>estado</th><td>aprobado</td></tr></table>");
+            }   
         </script>
     </center>
 </body>
